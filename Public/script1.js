@@ -46,4 +46,3 @@ function addRow()
     cell5.innerHTML = location;
 }
 
-module.exports.addRow = addRow

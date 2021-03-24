@@ -3,8 +3,12 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 
+//serve static files in express
+app.use(express.static(path.join(__dirname, "./Public"))); //then e.g. this will work http://localhost:3000/images/firefox-icon.png
+
+
 router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
+  res.sendFile(path.join(__dirname+'/views/index.html'));
 });
 
 
@@ -13,5 +17,4 @@ app.listen(process.env.port || 3000);
 
 console.log('Running at Port 3000');
 
-//Julian's version maybe
 
